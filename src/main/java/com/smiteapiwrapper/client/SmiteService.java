@@ -12,8 +12,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.smiteapiwrapper.cache.InMemoryCache;
 import com.smiteapiwrapper.models.Achievement;
+import com.smiteapiwrapper.models.Consumable;
 import com.smiteapiwrapper.models.NamedAPIResourceList;
 import com.smiteapiwrapper.models.Pantheon;
+import com.smiteapiwrapper.models.Passive;
+import com.smiteapiwrapper.models.Relic;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -90,6 +93,15 @@ public class SmiteService implements SmiteServiceInterface {
                         break;
                     case "Pantheon":
                         resource = gson.fromJson(jsonObject.toString(), Pantheon.class);
+                        break;
+                    case "Relic":
+                        resource = gson.fromJson(jsonObject.toString(), Relic.class);
+                        break;
+                    case "Passive":
+                        resource = gson.fromJson(jsonObject.toString(), Passive.class);
+                        break;
+                    case "Consumable":
+                        resource = gson.fromJson(jsonObject.toString(), Consumable.class);
                         break;
                 }
             }

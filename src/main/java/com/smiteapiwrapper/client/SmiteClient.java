@@ -6,8 +6,11 @@
 package com.smiteapiwrapper.client;
 
 import com.smiteapiwrapper.models.Achievement;
+import com.smiteapiwrapper.models.Consumable;
 import com.smiteapiwrapper.models.NamedAPIResourceList;
 import com.smiteapiwrapper.models.Pantheon;
+import com.smiteapiwrapper.models.Passive;
+import com.smiteapiwrapper.models.Relic;
 
 /**
  *
@@ -50,19 +53,35 @@ public class SmiteClient implements SmiteClientInterface {
         String fullpath = path + "/" + id;
         return this.useService(fullpath, objectName);
     }
-    private Object getObject(String path,String objectName) {
+
+    private Object getObject(String path, String objectName) {
         String fullpath = path;
         return this.useService(fullpath, objectName);
     }
 
     @Override
     public NamedAPIResourceList getAchievementList() {
-        return (NamedAPIResourceList) this.getObject("achievements","NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("achievements", "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPantheonList() {
-        return (NamedAPIResourceList) this.getObject("pantheons","NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pantheons", "NamedAPIResourceList");
+    }
+
+    @Override
+    public NamedAPIResourceList getConsumableList() {
+        return (NamedAPIResourceList) this.getObject("consumables", "NamedAPIResourceList");
+    }
+
+    @Override
+    public NamedAPIResourceList getRelicList() {
+        return (NamedAPIResourceList) this.getObject("relics", "NamedAPIResourceList");
+    }
+
+    @Override
+    public NamedAPIResourceList getPassiveList() {
+        return (NamedAPIResourceList) this.getObject("passives", "NamedAPIResourceList");
     }
 
     @Override
@@ -82,6 +101,36 @@ public class SmiteClient implements SmiteClientInterface {
 
     @Override
     public Achievement getAchievement(String name) {
-         return (Achievement) this.getObject("achievements", name, "Achievement");
+        return (Achievement) this.getObject("achievements", name, "Achievement");
+    }
+
+    @Override
+    public Relic getRelic(int id) {
+        return (Relic) this.getObject("relics", id, "Relic");
+    }
+
+    @Override
+    public Relic getRelic(String name) {
+        return (Relic) this.getObject("relics", name, "Relic");
+    }
+
+    @Override
+    public Passive getPassive(int id) {
+        return (Passive) this.getObject("passives", id, "Passive");
+    }
+
+    @Override
+    public Passive getPassive(String name) {
+        return (Passive) this.getObject("passives", name, "Passive");
+    }
+
+    @Override
+    public Consumable getConsumable(int id) {
+        return (Consumable) this.getObject("consumables", id, "Consumable");
+    }
+
+    @Override
+    public Consumable getConsumable(String name) {
+        return (Consumable) this.getObject("consumables", name, "Consumable");
     }
 }

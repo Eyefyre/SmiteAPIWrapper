@@ -6,8 +6,11 @@
 package com.smiteapiwrapper.client;
 
 import com.smiteapiwrapper.models.Achievement;
+import com.smiteapiwrapper.models.Consumable;
 import com.smiteapiwrapper.models.NamedAPIResourceList;
 import com.smiteapiwrapper.models.Pantheon;
+import com.smiteapiwrapper.models.Passive;
+import com.smiteapiwrapper.models.Relic;
 
 /**
  *
@@ -25,6 +28,12 @@ public interface SmiteClientInterface {
 
     NamedAPIResourceList getPantheonList();
 
+    NamedAPIResourceList getRelicList();
+
+    NamedAPIResourceList getPassiveList();
+
+    NamedAPIResourceList getConsumableList();
+
     Pantheon getPantheon(int id);
 
     Pantheon getPantheon(String name);
@@ -32,4 +41,16 @@ public interface SmiteClientInterface {
     Achievement getAchievement(int id);
 
     Achievement getAchievement(String name);
+
+    Relic getRelic(int id);
+
+    Relic getRelic(String name);
+
+    Passive getPassive(int id);
+
+    Passive getPassive(String name);
+
+    Consumable getConsumable(int id);
+
+    Consumable getConsumable(String name);
 }
