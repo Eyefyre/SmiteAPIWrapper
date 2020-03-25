@@ -26,5 +26,11 @@ A cache is used to speed up calls. Users are able to set the amount of time an o
     Pantheon getPantheon(String name);
     Achievement getAchievement(int id);
     Achievement getAchievement(String name);
+    Relic getRelic(int id);
+    Relic getRelic(String name);
+    Passive getPassive(int id);
+    Passive getPassive(String name);
+    Consumable getConsumable(int id);
+    Consumable getConsumable(String name);
     
  ```
