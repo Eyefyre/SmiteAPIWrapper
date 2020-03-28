@@ -9,6 +9,11 @@
         SmiteClient client = new SmiteClient();
         Pantheon chinese = client.getPantheon("Chinese");
  ```
+  An example of how to info on a God
+ ```
+        SmiteClient client = new SmiteClient();
+        God zhong = client.getPantheon("Zhong Kui");
+ ```
 A cache is used to speed up calls. Users are able to set the amount of time an object is stored in the cache
  ```
         SmiteClient client = new SmiteClient();
@@ -16,12 +21,18 @@ A cache is used to speed up calls. Users are able to set the amount of time an o
  ```
 ## Usable Methods
  Here are all the usable methods in this wrapper.
+ All name search methods are case-insensitive.
  ```
     void clearCache();
     long getCacheTime();
     void changeCacheTimeAmount(long seconds);
-    NamedAPIResourceList getAchievementList(int offset, int limit);
-    NamedAPIResourceList getPantheonList(int offset, int limit);
+    NamedAPIResourceList getAchievementList();
+    NamedAPIResourceList getPantheonList();
+    NamedAPIResourceList getConsumableList();
+    NamedAPIResourceList getRelicList();
+    NamedAPIResourceList getPassiveList()
+    NamedAPIResourceList getGodList();
+    NamedAPIResourceList getAbilityList();
     Pantheon getPantheon(int id);
     Pantheon getPantheon(String name);
     Achievement getAchievement(int id);
@@ -32,5 +43,9 @@ A cache is used to speed up calls. Users are able to set the amount of time an o
     Passive getPassive(String name);
     Consumable getConsumable(int id);
     Consumable getConsumable(String name);
+    God getGod(int id);
+    God getGod(String name);
+    Ability getAbility(int id);
+    Ability getAbility(String name);
     
  ```
